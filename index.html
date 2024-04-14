@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script src="https://kit.fontawesome.com/8f8488f52c.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body i , body button{
+            cursor: pointer;
+        }
+        .nav{
+            width: 100%;
+            height: 80px;
+            border: 1px solid;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 15px;
+        }
+        .nav > img{
+            width: 5%;
+            border-radius: 50%;
+            align-items: center; 
+            border: 2px solid white;
+        }
+
+        .sec{
+            color: white;
+        }
+        .search{
+            background-color: #fff;
+        }
+        .search-icon{
+            display: flex;
+            align-items: center;
+        }
+        .search > input{
+            font-size: 10px;
+            padding: 5px 10px;
+            /* border-radius: 16px; */
+            border: none;
+           
+        }
+        .search > input::placeholder{
+            font-size: 15px;
+        }
+        .search > i{
+            background-color: white;
+            font-size: 15px;
+            padding: 10px;
+           
+        }
+        .icon{
+            background-color:black;
+            color: white;
+            margin-left: 10px;
+        }
+        .icon >a> i{
+            margin: 8px;
+            font-size: 20px;
+            padding-bottom: 6px;
+            text-decoration: none;
+            color: whitesmoke;
+        }
+        .icon >a> i:hover{
+            color:maroon;
+            border-bottom: 5px solid white;
+        }
+        .section > a{
+            text-decoration: none;
+            color: white;
+            margin-right: 10px;
+            font-size: 17px;
+            padding-bottom: 6px;
+        }
+        .section > a:hover{
+            color: bisque;
+            border-bottom: 2px solid yellowgreen;
+        }
+        @media screen and (max-width:1150px) {
+            .section{
+                display: none;
+            }
+            .search{
+                width: 80%;
+            }
+        }
+        .ads{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            margin-top: 20px;
+            margin-bottom: 30px;
+            gap: 20px;
+            justify-content: center;
+        }
+        .ads > div{
+         display: flex;
+           /* width: 48%; */
+           justify-content: center;
+           padding: 12px 0px;
+           background-color: #f5f5f5;
+        }
+        .ads >div > h4{
+            margin: 0px 10px;
+            font-size: 17px;
+        }
+        .ads >div > p{
+            text-decoration: underline;
+        }
+        .ads :nth-child(2) > i {
+            transform: rotate(90deg);
+            margin-right: 10px;
+        }
+        .pic-ads{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            background-color: #f5f5f5;
+        }
+        .pic-ads > .heading{
+          display: block;
+          text-align: justify;
+          margin: auto 0px auto 50px;
+         
+        }
+        .pic-ads > .heading > h1 {
+            font-size: 50px;
+            font-weight: 1000;
+            
+        }
+        .pic-ads > .heading > p {
+            font-size: 20px;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        .pic-ads > .heading > button {
+            font-size: 15px;
+            font-weight: bold;
+            padding: 12px 20px;
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+        }
+        .pic-ads > .heading > button >span{
+            margin-left: 20px;
+        }
+        .pic-ads > .heading > button:hover{
+            font-size: 18px;
+           background-color: rgb(57, 51, 51);
+            
+            
+        }
+
+        @media screen and (max-width:1100px) {
+            .pic-ads{
+               grid-template-columns: 1fr;
+            }
+        }
+        .heading > button > a{
+            text-decoration: none;
+            color: white;
+        }
+        .cat-log{
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            gap: 10px;
+            padding: 30px 0px;
+        }
+        .cat-log > div{ 
+            width: 100%;
+            text-align: center;
+        }
+        .cat-log > div>img{
+            width: 100%;
+            margin: 15px 0px;
+        }
+        .middle-sec{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+            padding: 0px 20px;
+            margin-bottom: 20px;
+        }
+        .middle-sec > div{
+            width: 100%;
+            text-align: center;
+
+        }
+        .middle-sec > div > img{
+            width: 100%;
+        }
+        .middle-sec > div > h1{
+            font-size: xx-large;
+             margin: 17px;
+        }
+        .middle-sec > div > p{
+            border-bottom-style: solid;
+            padding: 10px 5px;
+            width: fit-content;
+            margin: auto;
+        }
+        .new-arrival{
+            text-align: center;
+            /* border: 1px solid; */
+            margin-top: 50px;
+        }
+        .new-arrival > h1{
+            font-size: 40px;
+            font-weight: bolder;
+        }
+        .shoes{
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            text-align: center;
+            gap: 10px;
+            /* border: 1px solid; */
+            margin: 20px 0px;
+        }
+        .shoes > .new-shoe{
+            width: 100%;
+            /* border: 1px solid; */
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            border-radius: 10px;
+        }
+        .shoes > .new-shoe > img{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .shoes > .new-shoe > p{
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .pic-ads2{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            background-color: #f5f5f5;
+           
+            margin: 40px 0px;
+        }
+        .pic-ads2 > .heading{
+            display: block;
+           text-align: justify;
+          margin: auto 0px auto 50px;
+         
+        }
+        .pic-ads2 > .heading > h1 {
+            font-size: 50px;
+            font-weight: 1000;
+            
+        }
+        .pic-ads2 > .heading > p {
+            font-size: 20px;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        .pic-ads2 > .heading > button {
+            font-size: 15px;
+            font-weight: bold;
+            padding: 12px 20px;
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+        }
+        .pic-ads2 > .heading > button:hover{
+            font-size: 17px;
+        }
+        .pic-ads2 > .heading > button >span{
+            margin-left: 20px;
+        }
+       .ads2{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 15px;
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+       }
+       .ads2 > div > img{
+        width: 100%;
+        margin-bottom: 10px;
+       }
+       .ads2 > div > h1 , .ads2 > div > p{
+        width: 80%;
+        margin-bottom: 15px;
+        margin-left: 10%;
+       }
+       .ads2 > div > span{
+        margin-right: 10px;
+        border-bottom: solid;
+        padding-bottom: 10px;
+        
+       }
+       .ads2 > div > span:hover {
+        border-width: 5px;
+       }
+       .footer{
+            background-color: black;
+            padding: 30px 50px;
+            margin-top: 30px;
+       }
+       .footer > .top-part{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+       }
+       .top-part >div> h2 , .top-part >div> p {
+        color: white;
+        margin-bottom: 10px;
+        text-underline-position: inherit;
+       }
+       .top-part > div > button{
+        padding: 10px 20px;
+        border: 1px solid white;
+        background-color: rgb(0, 0, 0);
+        color: rgb(237, 233, 233);
+        margin-top: 20px;
+       }
+       .top-part > div > button:hover{
+        border-bottom: 3px solid white;
+       }
+       .footer > .bottom-part{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+       }
+       .footer > .bottom-part >div{
+        margin-top: 20px;
+       }
+       .footer > .bottom-part > div > h3{
+        color: white;
+        margin: 20px 0px;
+        margin-bottom: 35px;
+       }
+       .footer > .bottom-part > div > a{
+        display:block;
+        margin-bottom: 14px;
+        color: white;
+        text-decoration: none;
+       }
+       .footer > .bottom-part > div > a:hover{
+            border-bottom-style: solid;
+            width: fit-content;
+       }
+      .social-media > h3 , .payment > h3{
+        color: white;
+        margin-top: 20px;
+        margin-bottom: 35px;
+      }
+      .social-media >a> i{
+        background-color:black;
+        color: white;
+        font-size: 30px;
+        padding-bottom: 5px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+      }
+      .social-media >a> i:hover{
+        border-bottom: 4px solid;
+      }
+      .payment > img{
+        width: 40px;
+        margin-right: 5px;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+      .android-mac{
+        width: 40%;
+        margin-top: 20px;
+      }
+      .android-mac >img:hover{
+        border-bottom: 4px solid gray;
+
+      }
+      .android-mac > img{
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+      .last-logo{
+        width: 50px;
+        
+      }
+      .last-logo >img{
+        width: 80px;
+        border-radius: 50%;
+        border: 2px solid white;
+      }
+      .padd{
+        padding-bottom: 15px;
+        border-bottom: 4px solid red;
+       
+      }
+      .top-nav{
+        height: 30px;
+        width: 100%;
+        background-color: black;
+        padding: 10px 0;
+        /* border-bottom: .03px solid rgb(205, 202, 202); */
+      }
+      .top-nav > div{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        /* border: 1px solid red; */
+        margin-left: 50%;
+        margin-bottom: 10px;
+        width: 50%;
+      }
+      .top-nav > div > p{
+        margin-right: 20px;
+        color: white;
+      }
+      .top-nav > div > p:hover{
+        color: goldenrod;
+        border-bottom: 2px solid whitesmoke;
+      }
+    
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <div>
+            <p>find a store</p>
+            <p>Welcome,sign in</p>
+            <p>Customer service</p>
+        </div>
+    </div>
+    <div class="nav">
+        <img src="./_ Circle Round Minimal Initials Photography Logo Video.gif" alt="" id="logo">
+
+        <div class="section">
+            <a href="./New Arrivals.html">NEW ARRIVALS</a>
+            <a href="">MEN'S</a>
+            <a href="">WOMAN'S</a>
+            <a href="">KID'S</a>
+            <a href="">CLOTHING</a>
+            <a href="">FAN SHOP</a>
+            <a href="">RELEASE</a>
+            <a href="">BRANDS</a>
+            <a href="">SALE</a>
+        </div>
+        <div class="search-icon">
+            <div class="search">
+                <input placeholder="Search Here" type="text" >
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="icon">
+                <a href=""><i class="fa-regular fa-heart"></i></a>
+                 <a href="./Cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href=""><i class="fa-solid fa-user"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="ads">
+        <div>
+            <i class="fa-regular fa-star"></i>
+            <h4>Save up to 30% off</h4>
+            <p>Shop Sale</p>
+        </div>
+        <div>
+            <i class="fa-sharp fa-solid fa-tag"></i>
+            <h4>Join FLX For Free Shipping & More!</h4>
+            <p>Sign up & Save</p>
+        </div>
+    </div>
+    <div class="pic-ads">
+        <div class="heading">
+            <h1>Winter Must Haves</h1>
+            <p>Refresh our closet for winter with new seasonal style staples.</p>
+            <button><a href="./Cart.html" target="_blank">SHOP WINTER ESSENTIALS  <span> ></span></a></button>
+        </div>
+        <div class="pic">
+            <img src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2023/january/230117-fl-hp-winter-essentials-m-asp.jpg" alt="">
+        </div>
+    </div>
+    <div class="cat-log">
+        <div>
+            <img src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2022/december/221227-fl-hp-pnyeu-mens.jpg" alt="">
+            <h4>SHOP MEN'S</h4>
+            <img src="https://images.footlocker.com/content/dam/final/footlockercanada/site/homepage/september/210910-FLCA-HP-Brand-6up-adidas-6up.jpg" alt="">
+        </div>
+        <div>
+            <img src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2022/december/221227-fl-hp-pnyeu-womens.jpg" alt="">
+            <h4>SHOP WOMEN'S</h4>
+            <img src="https://images.footlocker.com/content/dam/final/footlockercanada/site/homepage/september/210910-FLCA-HP-Brand-6up-nike-6up.jpg" alt="">
+        </div>
+        <div>
+            <img src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2022/december/221227-fl-hp-pnyeu-kids.jpg" alt="">
+            <h4>SHOP KIDS'</h4>
+            <img src="https://images.footlocker.com/content/dam/final/footlockercanada/site/homepage/september/210910-FLCA-HP-Brand-6up-jordan-6up.jpg" alt="">
+        </div>
+        <div>
+            <img src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2022/december/221227-fl-hp-pnyeu-Cloth.jpg" alt="">
+            <h4>SHOP CLOTHING</h4>
+            <img src="https://images.footlocker.com/content/dam/final/footlockercanada/site/homepage/september/210910-FLCA-HP-Brand-6up-new-balance-6up.jpg" alt="">
+        </div>
+        <div>
+            <img src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2022/december/221227-fl-hp-pnyeu-Acce.jpg" alt="">
+            <h4>SHOP ACCESSORIES</h4>
+            <img src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2022/october/221024-fl-hp-brands-6-up-hoka.jpg" alt="">
+        </div>
+        <div>
+            <img src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2022/december/221227-fl-hp-pnyeu-shop.jpg" alt="">
+            <h4>SHOP SALE</h4>
+            <img src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2022/october/221024-fl-hp-brands-6-up-ugg.jpg" alt="">
+        </div>
+    </div>
+    <div class="middle-sec">
+        <div>
+            <img src="https://images.footlocker.com//content/dam/final/footlocker/site/homepage/2023/january/230117-fl-homepage-nike-air-force-1-3up.jpg" alt="">
+            <h1>Nike Fave</h1>
+            <p>SHOP NIKE AIR FORCE</p>
+        </div>
+        <div>
+            <img src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2023/january/230117-fl-homepage-fleece-3up.jpg" alt="">
+            <h1>Seasonal Staple</h1>
+            <p>SHOP FLEECE</p>
+        </div>
+        <div>
+            <img src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2023/january/220117-fl-hp-nb-3up-v2.jpg" alt="">
+            <h1>Must-Have Kicks</h1>
+            <p>SHOP NEW BALANCE</p>
+        </div>
+    </div>
+    <div class="new-arrival">
+        <h1>New Shoe Arrivals</h1>
+      <div class="shoes">
+        <div class="new-shoe">
+            <img src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/20200306-Nike-Air-Force-1-Restock-6up.jpg" alt="">
+            <p>Nike Air Force 1</p>
+        </div>
+        <div class="new-shoe">
+            <img src="https://images.footlocker.com/content/dam/final/FootLockerInc/site/new-arrivals/new-arrival-6up-13375041.jpg" alt="">
+            <p>Diadora N9002</p>
+        </div>
+        <div class="new-shoe">
+            <img src="https://images.footlocker.com/content/dam/final/FootLockerInc/site/new-arrivals/new-arrival-6up-V1193901.jpg" alt="">
+            <p>Nike LeBron XX</p>
+        </div>
+        <div class="new-shoe">
+            <img src="https://images.footlocker.com/content/dam/final/FootLockerInc/site/new-arrivals/new-arrival-6up-Z2523001.jpg" alt="">
+            <p>Jordan AJ1 Retr Hi OG</p>
+        </div>
+        <div class="new-shoe">
+            <img src="https://images.footlocker.com/content/dam/final/FootLockerInc/site/new-arrivals/new-arrival-6up-ID4290.jpg" alt="">
+            <p>Adidas Response CL</p>
+        </div>
+        <div class="new-shoe">
+            <img src="https://images.footlocker.com/content/dam/final/FootLockerInc/site/new-arrivals/new-arrival-6up-37758401.jpg" alt="">
+            <p>PUMA MB2 x Slime</p>
+        </div>
+      </div>
+    </div>
+    <div class="pic-ads2">
+        <div class="heading">
+            <h1>Three Stripe Style</h1>
+            <p>Level up your kid's look with new adidas arrivals</p>
+            <button>SHOP KIDS ADIDAS  <span> ></span></button>
+        </div>
+        <div class="pic">
+            <img src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2023/january/230117-fl-hp-winter-essentials-m-asp.jpg" alt="">
+        </div>
+    </div>
+    <div class="ads2">
+        <div class="sub-ads">
+            <img src="https://images.footlocker.com/content/dam/final/flx/site/homepage/2022/november/221104-flx-hp-v3-3up-fl.jpg" alt="">
+            <h1>New FLX Rewards & Sweepstakes</h1>
+            <p>Use XPoints for exclusive new prizes, like a drone, Bluetooth turntable, Raycon speaker & SO much more!</p>
+            <span>JOIN FLX REWARDS
+            </span>
+            <span>REDEEM NOW</span>
+        </div>
+        <div class="sub-ads">
+            <img src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2023/january/230111-fl-hp-permanent-3up.jpg" alt="">
+            <h1>Unbeatable Fan Styles</h1>
+            <p>Show up and show off the love for your team in these winning fits from our fan shop.</p>
+            <span>EXPLORE THE FAN SHOP </span>
+            
+        </div>
+        <div class="sub-ads">
+            <img src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2022/december/221227-fl-p3up-hoh-3up.jpg" alt="">
+            <h1>House of Hoops</h1>
+            <p>House of Hoops by Foot Locker is an ode to basketball. A home for premium kicks from Nike, Jordan and Converse, that’s built by the game.</p>
+            <span>ENTER HOUSE OF HOOPS</span>
+           
+        </div>
+    </div>
+    <div class="footer">
+        <div class="top-part">
+            <div>
+                <h2>Email Gift Cards</h2>
+                <p>Valid online and at any Foot Locker Inc. brand</p>
+                <button>BUY EMAIL GIFT CARD</button>
+            </div>
+            <div>
+                <h2>Rewards Program</h2>
+                <p>Get free shipping, rewards, and more with FLX</p>
+                <button>FLX DETAILS</button>
+            </div>
+            <div>
+                <h2>Sign Up For Emails</h2>
+                <p>Stay in the loop, wherever you go</p>
+                <button>SIGN UP FOR EMAILS</button>
+            </div>
+            <div>
+                <h2>Mobile App</h2>
+                <p>Get ahead of the game with on-the-go shopping</p>
+                <button>MOBILE APP DETAILS</button>
+            </div>
+        </div>
+        <div class="bottom-part">
+            <div>
+                <h3><span class="padd">AB</span>OUT FOOTER LOCKER</h3>
+                <a href="#">About Us</a>
+                <a href="">Accessibility Statement</a>
+                <a href="#">Career Opportunities</a>
+                <a href="#">Pages Sitemap</a>
+                <a href="#">Products Sitemap 1</a>
+                <a href="#">Products Sitemap 2</a>
+                <a href="#">Products Sitemap 3</a>
+                <a href="#">Privacy Statement</a>
+                <a href="#">Do Not Sell or Share my Personal Information</a>
+                <a href="#">Limit the Use of my Sensitive Personal Data</a>
+                <a href="#">Ad Choices</a>
+                <a href="#">Terms Of Use</a>
+            </div>
+            <div>
+                <h3><span class="padd">CU</span>STOMER SERVICE</h3>
+                <a href="#">Contact Us</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Ordering Help</a>
+                <a href="#">Order Status</a>
+                <a href="#">Shipping Info</a>
+                <a href="#">Store Pick Up</a>
+                <a href="#">Returns-Exchanges</a>
+                <a href="#">Help</a>
+                <a href="#">COVID-19 Information</a>
+                <a href="#">Check Gift Card Balance</a>
+            </div>
+            <div>
+                <h3><span class="padd">QU</span>ICK LINKS</h3>
+                <a href="#">Store Locator</a>
+                <a href="#">Text Sign Up</a>
+                <a href="#">Launch 101</a>
+                <a href="#">Klarna</a>
+                <a href="#">Coupons</a>
+                <a href="#">Affiliates</a>
+                <a href="#">Fit Guarantee</a>
+                <a href="#">Military Discount</a>
+                <a href="#">Student Discount</a>
+                <a href="#">Release Calendar</a>
+                <a href="#">Start a Return/Exchange</a>
+            </div>
+            <div>
+                <div class="social-media">
+                    <h3><span class="padd">SO</span>CIAL</h3>
+                    <a href=""><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                   <a href="https://www.youtube.com/channel/UCvqKA3l-W-mGM9z8QQHXLTg"> <i class="fa-brands fa-youtube"></i></a>
+                   <a href="https://www.linkedin.com/in/gaurav-asode-31444b171/"><i class="fa-brands fa-linkedin"></i></a>
+                    
+                </div>
+                <div class="payment">
+                    <h3><span class="padd">PA</span>YMENT METHODS</h3>
+                    <img src="https://images.footlocker.com/content/dam/final/footlockereurope/Online_activations/backpages/ic_amex.png" alt="">
+                    <img src="https://images.footlocker.com/content/dam/final/footlockereurope/Online_activations/backpages/ic_discover.png" alt="">
+                    <img src="https://images.footlocker.com/content/dam/final/footlockereurope/Online_activations/backpages/ic_mastercard.png" alt="">
+                    <img src="https://images.footlocker.com/content/dam/final/footlockereurope/Online_activations/backpages/ic_paypal.png" alt="">
+                    <img src="https://images.footlocker.com/content/dam/final/footlockereurope/Online_activations/backpages/ic_visa_b.png" alt="">
+                    <img src="https://images.footlocker.com/content/dam/final/footlockereurope/Online_activations/backpages/ic_klarna.png" alt="">
+                    <img src="https://images.footlocker.com/content/dam/final/pdp/SupportFiles/L/LOGO-APPLEPAY/LOGO-APPLEPAY_a1.png" alt="">
+                    <img src="https://images.footlocker.com/content/dam/final/pdp/SupportFiles/L/LOGO-GOOGLEPAY2/LOGO-GOOGLEPAY2_a1.png" alt="">
+                </div>
+                <div class="android-mac">
+                    <img src="https://www.footlocker.com/built/252/images/shared/ic_logo_AppStore.svg" alt="">
+                    <img src="https://www.footlocker.com/built/252/images/shared/ic_logo_GooglePlay.svg" alt="">
+                </div>
+            </div>
+            <div class="last-logo">
+                <img src="./_ Circle Round Minimal Initials Photography Logo Video.gif" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+   
+</script>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SideBar</title>
+    <script src="https://kit.fontawesome.com/8f8488f52c.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 250px;
+            height: 100%;
+            background-color: #1e1e1e;
+        }
+        .container ul{
+            height: 100%;
+            background-color: #1e1e1e;
+            padding-left: 40px;
+        }
+        .container ul li{
+            line-height: 30px;
+            list-style: none;
+            position: relative;
+           
+            
+        }
+        .container ul li a{
+            color: white;
+            text-decoration: none;
+           
+        }
+        li span i {
+            color: white;
+            position: absolute;
+            right: 20px;
+        }
+       
+        ul li a:hover{
+            border-left: 5px solid white;
+        }
+      ul ul {
+        display: none;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Men's</a>
+                    <span><i class="fa-solid fa-caret-down"></i></span>
+                    <ul class="innerUl">
+                        <li><a href="">Shoes</a></li>
+                        <li><a href="">Shirt</a></li>
+                        <li><a href="">Jeans</a></li>
+                        <li><a href="">T-shirt</a></li>
+                    </ul>
+                </li>
+                <li><a href="">women</a>
+                    <span><i class="fa-solid fa-caret-down"></i></span>
+                    <ul class="innerUl">
+                        <li>
+                            <a href="">Saree</a>
+                            <a href="">Kurta</a>
+                            <a href="">Shandal</a>
+                            <a href="">MakeUp</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="">Sale</a></li>
+            </ul>
+    </div>
+    <div>
+        <span class="aba"><i class="fa-solid fa-bars"></i></span>
+    </div>
+</body>
+<script>
+let ul = document.getElementsByClassName("innerUl");
+
+
+</script>
+</html>
