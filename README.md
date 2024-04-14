@@ -3,17 +3,15 @@
 # [FootLocker](https://dancing-tarsier-2de857.netlify.app/index.html)
 
 It's E-commerce website Where you can buy stuff 
-especially for  Shoes and Clothes ,It's clone of [FootLocker](https://www.reliancedigital.in/headphones-headsets/c/S101021) and also it's completely responsive website
+especially for  Shoes and Clothes ,It's clone of [FootLocker]([https://www.reliancedigital.in/headphones-headsets/c/S101021](https://661ba0077b4a5e4494310ad5--chic-hummingbird-d2fd57.netlify.app/)) and also it's completely responsive website
 
 
 
 
 ## Team Member
 [Pralhad Kushawh(Team Leader)] 
-[prashant Som]      
+[Rahul Jadhav]      
 [Gaurav Asode] 
-[Mayur Shende]   
-[Sagar Khadse ]
 
 ## 🛠 Tools
 1. Javascript
