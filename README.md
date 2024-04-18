@@ -3,7 +3,7 @@
 # [FootLocker](https://dancing-tarsier-2de857.netlify.app/index.html)
 
 It's E-commerce website Where you can buy stuff 
-especially for  Shoes and Clothes ,It's clone of [FootLocker](https://661ba0077b4a5e4494310ad5--chic-hummingbird-d2fd57.netlify.app/) and also it's completely responsive website
+especially for  Shoes and Clothes, It's a clone of [FootLocker](https://661ba0077b4a5e4494310ad5--chic-hummingbird-d2fd57.netlify.app/) and also it's a completely responsive website
 
 
 
